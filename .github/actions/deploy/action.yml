@@ -35,6 +35,9 @@ runs:
     - name: wait
       shell: bash
       run: sleep 5
+    - name: list
+      shell: bash
+      run: pm2 list
     - name: done
       shell: bash
       run: echo deployed
