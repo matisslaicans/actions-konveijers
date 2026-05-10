@@ -19,9 +19,9 @@ runs:
       shell: bash
       working-directory: course-js-api-framework
       run: npm install
-    - name: wait for server
+    - name: test
       shell: bash
-      run: sleep 5
+      run: pm2 list
     - name: tests
       shell: bash
       working-directory: course-js-api-framework
