@@ -19,10 +19,13 @@ runs:
       shell: bash
       working-directory: course-js-api-framework
       run: npm install
+    - name: wait for server
+      shell: bash
+      run: sleep 5
     - name: tests
       shell: bash
       working-directory: course-js-api-framework
-      run: NODE_ENV=${{ inputs.environment }} npm run greetings
+      run: npm run greetings greetings_${{ inputs.environment }}
     - name: done
       shell: bash
       run: echo "tested"
