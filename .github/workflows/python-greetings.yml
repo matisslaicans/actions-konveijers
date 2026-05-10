@@ -1,5 +1,8 @@
 name: python-greetings
 
+env:
+  PM2_HOME: /home/runner/.pm2
+
 on:
   push:
     branches: ["main"]
