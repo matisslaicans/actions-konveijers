@@ -4,7 +4,6 @@ description: no description
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v6
     - shell: bash
       run: echo "Dependencies"
       
