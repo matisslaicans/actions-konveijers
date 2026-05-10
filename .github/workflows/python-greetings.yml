@@ -20,7 +20,7 @@ jobs:
           clean: 'false'
 
       - name: pips
-        uses: ./.github/actions/install-deps    
+        uses: ./.github/actions/depend    
     
   deploy-to-dev:
     runs-on: self-hosted
