@@ -4,18 +4,24 @@ description: no description
 runs:
   using: composite
   steps:
+    - name: clone repo
+      uses: actions/checkout@v6
+      with:
+        repository: mtararujs/python-greetings
+        path: python-greetings  
     - shell: bash
       run: echo "Dependencies"
-      
     - name: v-env
       shell: bash
       working-directory: python-greetings
       run: python3 -m venv venv
-
     - name: requirements
       shell: bash
       working-directory: python-greetings
       run: ./venv/bin/python -m pip install -r requirements.txt
-
+    - name: npm
+      shell: bash
+      working-directory: python-greetings
+      run: npm install
     - shell: bash
       run: echo "Installed"
