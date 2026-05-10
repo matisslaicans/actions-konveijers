@@ -1,1 +1,26 @@
+name: tests
+description: tests
 
+inputs:
+  environment:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "testing"
+
+    - name: npm
+      shell: bash
+      working-directory: course-js-api-framework
+      run: npm install
+
+    - name: tests
+      shell: bash
+      working-directory: course-js-api-framework
+      run: npm run greetings greetings_${{ inputs.environment }}
+
+    - name: done
+      shell: bash
+      run: echo "tested"
