@@ -12,13 +12,6 @@ runs:
   - shell: bash
     run: echo "deploy"
 
-  - name: clone
-    uses: actions/checkout@v6
-    with:
-      repository: mtararujs/python-greetings
-      path: python-greetings
-      clean: 'false'
-
   - name: stop
     shell: bash
     working-directory: python-greetings
