@@ -36,6 +36,10 @@ runs:
     shell: bash
     run: pm2 list
 
+  - name: logs
+    shell: bash
+    run: pm2 logs greetings-app-${{ inputs.environment }} --lines 50
+
   - name: done
     shell: bash
     run: echo deployed
