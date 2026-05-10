@@ -1,7 +1,7 @@
 name: python-greetings
 
 env:
-  PM2_HOME: /home/runner/.pm2
+  PM2_HOME: /tmp/.pm2
 
 on:
   push:
