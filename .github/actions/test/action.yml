@@ -22,7 +22,7 @@ runs:
     - name: tests
       shell: bash
       working-directory: course-js-api-framework
-      run: npm run greetings greetings_${{ inputs.environment }}
+      run: NODE_ENV=${{ inputs.environment }} npm run greetings
     - name: done
       shell: bash
       run: echo "tested"
