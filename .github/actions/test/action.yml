@@ -12,6 +12,7 @@ runs:
       uses: actions/checkout@v6
       with:
         repository: mtararujs/course-js-api-framework
+        clean: false
         path: course-js-api-framework
     - shell: bash
       run: echo "testing"
@@ -19,13 +20,10 @@ runs:
       shell: bash
       working-directory: ./course-js-api-framework
       run: npm install
-    - name: test
-      shell: bash
-      run: pm2 list
     - name: tests
       shell: bash
       working-directory: ./course-js-api-framework
-      run: npm run greetings -- greetings_${{ inputs.environment }}
+      run: npm run greetings greetings_${{ inputs.environment }}
     - name: done
       shell: bash
       run: echo "tested"
