@@ -17,14 +17,14 @@ runs:
       run: echo "testing"
     - name: npm
       shell: bash
-      working-directory: course-js-api-framework
+      working-directory: ./course-js-api-framework
       run: npm install
     - name: test
       shell: bash
       run: pm2 list
     - name: tests
       shell: bash
-      working-directory: course-js-api-framework
+      working-directory: ./course-js-api-framework
       run: npm run greetings -- greetings_${{ inputs.environment }}
     - name: done
       shell: bash
