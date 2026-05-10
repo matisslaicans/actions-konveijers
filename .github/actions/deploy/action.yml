@@ -32,12 +32,9 @@ runs:
       shell: bash
       working-directory: python-greetings
       run: pm2 start app.py --name greetings-app-${{ inputs.environment }} --interpreter ./venv/bin/python -- --port ${{ inputs.port }}
-    - name: wait
+    - name: fix???
       shell: bash
-      run: sleep 5
-    - name: list
-      shell: bash
-      run: pm2 list
+      run: pm2 save
     - name: done
       shell: bash
       run: echo deployed
