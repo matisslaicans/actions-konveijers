@@ -21,7 +21,6 @@ runs:
     shell: bash
     working-directory: python-greetings
     run: ./venv/bin/python -m pip install -r requirements.txt
-    
 
   - name: stop
     shell: bash
@@ -32,6 +31,10 @@ runs:
     shell: bash
     working-directory: python-greetings
     run: pm2 start app.py --name greetings-app-${{ inputs.environment }} --interpreter ./venv/bin/python -- --port ${{ inputs.port }}
+
+  - name: logs
+    shell: bash
+    run: pm2 list
 
   - name: done
     shell: bash
