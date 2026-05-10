@@ -9,18 +9,8 @@ jobs:
   install-pip-deps:
     runs-on: self-hosted
     steps:
-      - name: checkout
-        uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/python-greetings
-          path: python-greetings
-          clean: 'false'
-
-      - name: pips
-        uses: ./.github/actions/depend    
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/depend
     
   deploy-to-dev:
     runs-on: self-hosted
@@ -28,14 +18,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/python-greetings
-          path: python-greetings
-          clean: 'false'
-
       - name: deploy
         uses: ./.github/actions/deploy
         with:
@@ -48,14 +30,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/course-js-api-framework
-          path: course-js-api-framework
-          clean: 'false'
-
       - name: tests
         uses: ./.github/actions/test
         with:
@@ -67,14 +41,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: Clone python-greetings repo
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/python-greetings
-          path: python-greetings
-          clean: 'false'
-
       - name: deploy
         uses: ./.github/actions/deploy
         with:
@@ -87,14 +53,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/course-js-api-framework
-          path: course-js-api-framework
-          clean: 'false'
-
       - name: tests
         uses: ./.github/actions/test
         with:
@@ -106,14 +64,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/python-greetings
-          path: python-greetings
-          clean: 'false'
-
       - name: deploy
         uses: ./.github/actions/deploy
         with:
@@ -126,14 +76,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/course-js-api-framework
-          path: course-js-api-framework
-          clean: 'false'
-
       - name: tests
         uses: ./.github/actions/test
         with:
@@ -145,14 +87,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/python-greetings
-          path: python-greetings
-          clean: 'false'
-
       - name: deploy
         uses: ./.github/actions/deploy
         with:
@@ -166,14 +100,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-    
-      - name: clone
-        uses: actions/checkout@v6
-        with:
-          repository: mtararujs/course-js-api-framework
-          path: course-js-api-framework
-          clean: 'false'
-
       - name: tests
         uses: ./.github/actions/test
         with:
