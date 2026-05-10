@@ -19,9 +19,5 @@ runs:
       shell: bash
       working-directory: python-greetings
       run: ./venv/bin/python -m pip install -r requirements.txt
-    - name: npm
-      shell: bash
-      working-directory: python-greetings
-      run: npm install
     - shell: bash
       run: echo "Installed"
