@@ -1,8 +1,5 @@
 name: python-greetings
 
-env:
-  PM2_HOME: /tmp/.pm2
-
 on:
   push:
     branches: ["main"]
@@ -25,7 +22,7 @@ jobs:
         uses: ./.github/actions/deploy
         with:
           environment: dev
-          port: "7001"
+          port: 7001
     
   tests-on-dev:
     runs-on: self-hosted
@@ -48,7 +45,7 @@ jobs:
         uses: ./.github/actions/deploy
         with:
           environment: stg
-          port: "7002"
+          port: 7002
 
   tests-on-stg:
     runs-on: self-hosted
@@ -71,7 +68,7 @@ jobs:
         uses: ./.github/actions/deploy
         with:
           environment: preprod
-          port: "7003"    
+          port: 7003
     
   tests-on-preprod:
     runs-on: self-hosted
@@ -94,7 +91,7 @@ jobs:
         uses: ./.github/actions/deploy
         with:
           environment: prod
-          port: "7004"
+          port: 7004
 
     
   Tests-on-prod:
