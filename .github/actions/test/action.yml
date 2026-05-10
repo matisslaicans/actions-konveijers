@@ -13,7 +13,7 @@ runs:
       with:
         repository: mtararujs/course-js-api-framework
         clean: false
-        path: course-js-api-framework
+        path: 'course-js-api-framework'
     - shell: bash
       run: echo "testing"
     - name: npm
