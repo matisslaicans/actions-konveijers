@@ -1,0 +1,34 @@
+name: deploy
+description: deploy
+
+inputs:
+  environment:
+    required: true
+  port:
+    required: true
+runs:
+  using: composite
+  steps:
+  - shell: bash
+    run: echo "deploy"
+
+  - name: clone
+    uses: actions/checkout@v6
+    with:
+      repository: mtararujs/python-greetings
+      path: python-greetings
+      clean: 'false'
+
+  - name: stop
+    shell: bash
+    working-directory: python-greetings
+    run: pm2 delete greetings-app-${{ inputs.environment }} || true
+
+  - name: start
+    shell: bash
+    working-directory: python-greetings
+    run: pm2 start app.py --name greetings-app-${{ inputs.environment }} --interpreter ./venv/bin/python -- --port ${{ inputs.port }}
+
+  - name: done
+    shell: bash
+    run: echo deployed
