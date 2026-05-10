@@ -2,51 +2,51 @@ name: python-greetings
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
   install-pip-deps:
     runs-on: self-hosted
     steps:
-
+    
   deploy-to-dev:
     runs-on: self-hosted
     needs: install-pip-deps
     steps:
-
-
+    
   tests-on-dev:
     runs-on: self-hosted
     needs: deploy-to-dev
     steps:
-
-
+    
   deploy-to-stg:
     runs-on: self-hosted
     needs: tests-on-dev
     steps:
-
-
+    
   tests-on-stg:
     runs-on: self-hosted
     needs: deploy-to-stg
     steps:
-
-
+    
   deploy-to-preprod:
     runs-on: self-hosted
     needs: tests-on-stg
-
-
+    steps:
+    
   tests-on-preprod:
     runs-on: self-hosted
     needs: deploy-to-preprod
-
-
-
+    steps:
+    
+  deploy-to-prod:
+    runs-on: self-hosted
+    needs: tests-on-preprod
+    steps:
+    
   Tests-on-prod:
     runs-on: self-hosted
     needs: deploy-to-prod
     steps:
+    
